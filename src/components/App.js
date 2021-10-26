@@ -5,9 +5,9 @@ import ContactList from "./Contacts/ContactList/ContactList";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  const [contacts, setContacts] = useState(
-    () => JSON.parse(window.localStorage.getItem("contacts")) ?? []
-  );
+  const [contacts, setContacts] = useState(() => {
+    return JSON.parse(window.localStorage.getItem("contacts")) ?? [];
+  });
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
